@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 traffic_collision
 ==============================
 
@@ -55,3 +56,14 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+=======
+# Traffic Collision Machine Learning Project
+
+This public repository contains the Machine Learning Team's materials for the Traffic Collisions Project, organized by the Projects Circle.  
+
+### Project Team Members
+- Cindy Wong
+- Isaac Campbell-Smith  
+- Maureen Petterson  
+- Feli Gentle  
+>>>>>>> 5d4ff7b77c59366bf1543548986c232e0965349b
