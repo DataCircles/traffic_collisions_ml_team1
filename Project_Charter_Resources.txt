@@ -1,0 +1,35 @@
+Seattle Traffic Collisions Project
+Cindy Wong, Isaac Campbell-Smith, Maureen Petterson, Feli Gentle (tentative)
+
+Week 0: Project Charter
+
+Business Case
+
+Seattle is a rapidly growing metropolis and the road infrastructure needs to be modified and maintained to ensure pedestrian and cyclist safety. In 2019 there were approximately 30 collisions per month, on average, resulting in ~15 injuries. 
+
+We want to address both cyclist and pedestrian safety by exploring the main contributing factors to car-cyclist and car-pedestrian collisions and then propose improvements to the most dangerous intersections. 
+
+
+Team Logistics
+
+Communication
+Slack 
+30 min - 1 hour meeting Wednesday at 11:30am
+Tracking Team Progress
+GitHub project board
+How to work collaboratively
+Single github repo (Erin will make this for our team)
+Initially work independently and compare at Wednesday meeting, but potentially will move onto pair programming or assigning specific tasks to members based off of the project board.  
+
+
+Meeting Wednesday 7/15/2020 6-8pm
+
+There is a second dataset that we can use to augment our data. Check out the project kickoff slides in the github repo. Also linked below. 
+Helpful tutorials: https://github.com/DataCircles/projects_circle/blob/master/tutorials.md
+Tableau workshop on next Monday @ 6:30pm (not expected to take full 2 hours). Notebook will be available Sunday night with completed dashboards and Monday will be building from scratch. https://www.meetup.com/Seattle-WiDS-Meetup/events/271952665/
+Examples of Data Visualization project and ML projects in main repo (https://github.com/DataCircles/projects_circle)
+
+Resources:
+Seattle street data: https://opendata.arcgis.com/datasets/383027d103f042499693da22d72d10e3_0.csv
+Seattle traffic collision data: https://opendata.arcgis.com/datasets/5b5c745e0f1f48e7a53acec63a0022ab_0.csv
+
