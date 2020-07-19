@@ -33,5 +33,12 @@ Resources:
 Seattle street data: https://opendata.arcgis.com/datasets/383027d103f042499693da22d72d10e3_0.csv
 Seattle traffic collision data: https://opendata.arcgis.com/datasets/5b5c745e0f1f48e7a53acec63a0022ab_0.csv
 
+<<<<<<< HEAD
 Other datasets of interest
 Zoning areas 
+=======
+Other:
+http://trafodata.net/
+https://github.com/dabreegster/abstreet
+
+>>>>>>> 87dddc818979e5654ce92560fbd2205c8d460380
