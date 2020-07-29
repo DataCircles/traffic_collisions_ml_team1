@@ -24,7 +24,7 @@ $\,\,$ 0 — unknown
 **PEDCOUNT** - the total number of pedestrians involved  
 **PEDCYLCOUNT** - the total number of cyclists involved  
 **VEHCOUNT** - the total number of vehicles involved  
-**INJURIES** - the total number of injuries other than fatal or disabling at the scene, including broken fingers or toes, abrasions, etc.  
+**INJURIES** - the total number of injuries 																				other than fatal or disabling at the scene, including broken fingers or toes, abrasions, etc.  
 **SERIOUSINJURIES** - total number of injuries that result in at least a temporary impairment, e.g. a broken limb. It does not mean that the collision resulted in a permanent disability  
 **FATALITIES** - includes the total number of persons who died at the scene of the collisions, were dead on arrival at the hospital, or died within 30 days of the collision from collision-related injuries  
 **INCDATE** - incident date  
