@@ -25,7 +25,7 @@ Completed tasks for this week:
 - 90% of collisions involving pedestrians or cyclists resulted in an injury.
 - 27% of collisions NOT involving pedestrians or cyclists resulted in an injury.
 
-![feature0]
+![feature0](figures/combined_importances_lgb.png)
 ![feature1](figures/lightgbm_importance_allcoll.png)
 ![feature2](figures/lightgbm_importance_ped_cyclist.png)
 ![feature3](figures/lightgbm_importance_caronly.png)
