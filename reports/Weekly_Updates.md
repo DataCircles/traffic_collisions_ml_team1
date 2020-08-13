@@ -30,6 +30,15 @@ Completed tasks for this week:
 ![feature2](figures/lightgbm_importance_ped_cyclist.png)
 ![feature3](figures/lightgbm_importance_caronly.png)
 
+- Testing out Random Forest for Pedestrian/Cyclist Collisions
+
+Looking at a heatmap of the correlations, it is clear there are some columns that are highly correlated.
+
+![corr_heatmap](figures/pedcycle_heatmap.png)
+
+The highly correlated columns are reduced down to one and new feature importance appeared.
+
+![rf_featimportance](figures/rf_featimportance.png)
 
 
 2. Combined Intersections and Traffic Flow data with Collisions data. 
