@@ -30,6 +30,11 @@ Completed tasks for this week:
 ![feature2](figures/lightgbm_importance_ped_cyclist.png)
 ![feature3](figures/lightgbm_importance_caronly.png)
 
+Using new columns created from bike rack distances, radar distances, marked crosswalk distances, traffic circle distances with the Light GBM model, it increased the accuracy by a slight margin and have slightly different feature importance.
+
+![feateng_importance](figures/feateng_importance_gbm.png)
+![feateng_roc](figures/feateng_roc_gbm.png)
+
 - Testing out Random Forest for Pedestrian/Cyclist Collisions
 
 Looking at a heatmap of the correlations, it is clear there are some columns that are highly correlated.
