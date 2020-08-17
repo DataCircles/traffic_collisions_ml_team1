@@ -56,6 +56,7 @@ Do we see a change in injury and fatality in these areas?
   - rate of injury, i.e. out of all collisions how often did they result in injury
     - various injury classification
   - rate of fatality, i.e. out of all injuries, how often did they result in fatality
+  - ???
 
 ---
 
@@ -82,6 +83,8 @@ Do injurious/fatal collisions have higher rates of recorded distracted driving, 
 #### Hypotheses
 
 **Null Hypothesis**:
+
+Impairment is not higher in injurious/fatal
 
 **Alternative Hypothesis**:
 
@@ -112,3 +115,4 @@ Do injurious/fatal collisions have higher rates of recorded distracted driving, 
 
 #### Research questions
 
+New data collection policy suggestion
