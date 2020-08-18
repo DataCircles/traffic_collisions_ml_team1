@@ -62,6 +62,10 @@ Most notable is the difference of important features in the collisions involving
         <td><img src='reports/figures/lightgbm_importance_ped_cyclist.png'></td>
 </table>   
 
+
+Considering alcohol is a large influence in non-pedestrian collisions, we investigated alcohol usage over time. 
+<img src='reports/figures/Collisions_drunk.png'>
+
 That drugs/alcohol-caused collisions have kept remarkably steady since 2005 is somewhat telling - about 500 per year. It's completely possible that current actions in place to combat driving under-the-infulence are keeping them at this rate, it seems clear that a different (likely harsher) approach is needed to get those numbers down.
 
 ---
