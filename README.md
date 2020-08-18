@@ -35,6 +35,10 @@ https://github.com/DataCircles/traffic_collisions_ml_team1/blob/master/notebooks
 Additionally, we noted that the rate of injuries in collisions involving pedestrians and cyclists was quite high: 90% of those collisions resulted in an injury, compared to just 27% injury rate in collisions not including pedestrians of cyclists. 
 
 
+Looking at a bar chart of the features present in both pedestrian/cyclist collisions vs collisions without pedestrians/cyclists already builds an intution for what features the model will likely deem important. 
+
+<img src='reports/figures/feature_existence_collisions.png'>
+
 
 ---
 
@@ -46,6 +50,7 @@ Though there is a large degree of randomness underlying our data in this inheren
 ## Machine Learning Pt. I - Individual Collisions
 
 Our first approach to learning from these datasets was to look at as many features as possible on each collision to see what were the strongest indicators of whether it would lead to injuries. While this approach does bring some serious data leakage into the mix, we still felt it might still provide insights. 
+
 
 LightGBM was the model we opted for here because it can handle categorical features under the hood without needing to one-hot-encode any columns. We also wanted to see if pedestrian/cyclist-involved accidents would produce different results. Even after tuning hyperparameters, the AUC was only 0.64 and the feature importances amount to a common sense intuition of why injuries might occur in traffic collisions. Whether drugs or alcohol are present, lack of attention, and night-time lighting are important features for this model's predictive power. 
 
