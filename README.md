@@ -43,11 +43,20 @@ Though there is a large degree of randomness underlying our data in this inheren
 
 Our first approach to learning from these datasets was to look at as many features as possible on each collision to see what were the strongest indicators of whether it would lead to injuries. While this approach does bring some serious data leakage into the mix, we still felt it might still provide insights. 
 
-LightGBM was the model we opted for here because it can handle categorical features under the hood without needing to one-hot-encode any columns. We also wanted to see if pedestrian/cyclist-involved accidents would produce different results. Even after tuning hyperparameters, the results aren't performing much better than guesswork and the feature importances amount to a common sense intuition of why injuries might occur in traffic collisions. Whether drugs or alcohol are present, lack of attention, and night-time lighting are important features for this model's predictive power. 
+LightGBM was the model we opted for here because it can handle categorical features under the hood without needing to one-hot-encode any columns. We also wanted to see if pedestrian/cyclist-involved accidents would produce different results. Even after tuning hyperparameters, the AUC was only 0.64 and the feature importances amount to a common sense intuition of why injuries might occur in traffic collisions. Whether drugs or alcohol are present, lack of attention, and night-time lighting are important features for this model's predictive power. 
 
-<img src="https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/lightgbm_auc.png" width='350'>
-<img src="https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/lightgbm_importance_caronly.png" width='375'>
-<img src="https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/lightgbm_importance_ped_cyclist.png" width='390'>
+Most notable is the difference of important features in the collisions involving pedestrians and cyclists. The influence of alcohol becomes far less important than presence of a crosswalk key and inattention. 
+
+
+<table>
+    <tr>
+        <td><img src='reports/figures/combined_importances_lgb.png'></td>
+        <td><img src='reports/figures/lightgbm_importance_all_coll.png'></td>
+    </tr>
+    <tr>
+        <td><img src='reports/figures/lightgbm_importance_car_only.png'></td>
+        <td><img src='reports/figures/lightgbm_importance_ped_cyclist.png'></td>
+</table>   
 
 That drugs/alcohol-caused collisions have kept remarkably steady since 2005 is somewhat telling - about 500 per year. It's completely possible that current actions in place to combat driving under-the-infulence are keeping them at this rate, it seems clear that a different (likely harsher) approach is needed to get those numbers down.
 
