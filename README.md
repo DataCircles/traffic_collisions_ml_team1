@@ -32,6 +32,10 @@ The dramatic increase in reported collisions with distracted drivers from 2013-1
 For more a more in-depth overview of the technical and statistical components of the datasets, checkout this notebook: 
 https://github.com/DataCircles/traffic_collisions_ml_team1/blob/master/notebooks/data_report.ipynb
 
+Additionally, we noted that the rate of injuries in collisions involving pedestrians and cyclists was quite high: 90% of those collisions resulted in an injury, compared to just 27% injury rate in collisions not including pedestrians of cyclists. 
+
+
+
 ---
 
 ## Bayesian Approach
