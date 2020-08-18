@@ -32,8 +32,17 @@ The dramatic increase in reported collisions with distracted drivers from 2013-1
 For more a more in-depth overview of the technical and statistical components of the datasets, checkout this notebook: 
 https://github.com/DataCircles/traffic_collisions_ml_team1/blob/master/notebooks/data_report.ipynb
 
-Additionally, we noted that the rate of injuries in collisions involving pedestrians and cyclists was quite high: 90% of those collisions resulted in an injury, compared to just 27% injury rate in collisions not including pedestrians of cyclists. 
 
+### Alcohol Use
+
+That drugs/alcohol-caused collisions have kept remarkably steady since 2005 is somewhat telling - about 500 per year. It's completely possible that current actions in place to combat driving under-the-infulence are keeping them at this rate, it seems clear that a different (likely harsher) approach is needed to get those numbers down.
+
+<img src='reports/figures/Collisions_drunk.png'>
+
+
+
+### Pedestrians and Cyclists
+Additionally, we noted that the rate of injuries in collisions involving pedestrians and cyclists was quite high: 90% of those collisions resulted in an injury, compared to just 27% injury rate in collisions not including pedestrians of cyclists. 
 
 Looking at a bar chart of the features present in both pedestrian/cyclist collisions vs collisions without pedestrians/cyclists already builds an intution for what features the model will likely deem important. 
 
@@ -67,11 +76,6 @@ Most notable is the difference of important features in the collisions involving
         <td><img src='reports/figures/lightgbm_importance_ped_cyclist.png'></td>
 </table>   
 
-
-Considering alcohol is a large influence in non-pedestrian collisions, we investigated alcohol usage over time. 
-<img src='reports/figures/Collisions_drunk.png'>
-
-That drugs/alcohol-caused collisions have kept remarkably steady since 2005 is somewhat telling - about 500 per year. It's completely possible that current actions in place to combat driving under-the-infulence are keeping them at this rate, it seems clear that a different (likely harsher) approach is needed to get those numbers down.
 
 ---
 
