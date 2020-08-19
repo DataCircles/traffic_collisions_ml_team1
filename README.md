@@ -98,11 +98,13 @@ Yearly Trends
 
 <table>
     <tr>
-        <td><img src='reports/figures/blocks_yearly.png' width='600'></td>
-        <td><img src='reports/figures/crosswalks_yearly.png' width='600'></td>
+        <td><img src='reports/figures/blocks_yearly.png'></td>
     </tr>
     <tr>
-        <td><img src='reports/figures/circles_yearly.png' width='600'></td>
+        <td><img src='reports/figures/crosswalks_yearly.png'></td>
+    </tr>
+    <tr>
+        <td><img src='reports/figures/circles_yearly.png'></td>
     </tr>
 </table>
 
