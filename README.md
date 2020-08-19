@@ -174,3 +174,5 @@ https://public.tableau.com/profile/isaac.campbell.smith#!/vizhome/SeattleInterse
 
 ---
 ## Final Thoughts
+
+- Demographic Data: Collisions are not simply location based unfortunately. People are the other main factors involved in collisions. Looking at the feature importances of the streets, we ran into issues where it simply doesn't give enough prediction power because of either poor data collection or it didn't make a difference.
