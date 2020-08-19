@@ -54,7 +54,7 @@ Looking at a bar chart of the features present in both pedestrian/cyclist collis
 ## EDA of Additional Datasets
 
 Since the main collisions data only contains locations that had a collision, we decided to look for what is NOT there. We sought out other data that might be able to help us fill in the gap.
-Using a complete list of blocks and crosswalks along with more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
+Using a complete list of blocks, crosswalks and circles along with more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
 
 ### Blocks
 
@@ -77,6 +77,28 @@ Compared to blocks, only about 36% of crosswalks had an incident. About 95% coll
 
 <img src='reports/figures/crosswalks_pedcyl.png' width='700' align='center'>
 
+We took a look at the district locations of these crosswalks. District 7 seems to have the most crosswalks (~26%) with District 2 being the second most (~18%).
+
+<img src='reports/figures/crosswalk_districts.png' width='700' align='center'>
+
+Another column to observe is the crosswalk control.
+
+<img src='reports/figures/crosswalk_control.png' width='700' align='center'>
+
+There isn't a clear difference except for the stop sign type. More crosswalks with stop signs fall into the no collisions category.
+
+### Circles
+
+About 77% of recorded traffic circles has had at least 1 collision over the years, more than blocks and crosswalks. Looking at the district locations, they are quite different than the crosswalks with District 5 and 3 being ones with the most traffic circles and district 7 being the less.
+
+<img src='reports/figures/circles_districts.png' width='700' align='center'>
+
+
+Yearly Trends
+
+     Blocks                |         Crosswalks        |     Circles
+:-------------------------:|:-------------------------:|:-------------------------:
+![](reports/figures/blocks_yearly.png)| ![](reports/figures/crosswalks_yearly.png) | ![](reports/figures/circles_yearly.png)
 
 ---
 
@@ -118,7 +140,9 @@ Our next approach is to get feature importance from the individual datasets wher
     </tr>
 </table> 
 
-Note that only about 8% of crosswalks at school zones had incidents while about 40% of crosswalks outside of school zones had incidents. Also note there are a lot more crosswalks outside of school zones (~70%). 
+Note that only about 8% of crosswalks at school zones had incidents while about 40% of crosswalks outside of school zones had incidents. Also note there are a lot more crosswalks outside of school zones (~70%).
+
+For circles, the original feature importance was actually traffic circle size. Unfortunately, an overwhelming amount of them were marked 0 and it was deemed unreliable. This goes back to better data collection would help out a lot more with these analysis. Also, looking on google maps, the traffic circles labeled as circles vs ovals basically look the same. Some are slightly elongated in both categories.
 
 ---
 
