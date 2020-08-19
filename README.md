@@ -62,7 +62,7 @@ Using a complete list of each those locations along more detailed features, we c
 Over the years, about 72.5% of the blocks recorded has had at least one collision.
 Looking the blocks data, there are 3 columns that seem like it could have significance: speed limit, slope percentage and artdescript (label of type of arterial road). We found that most blocks are categorized as some type of neighborhood street and thus a large number of them have pretty low speed limits- about 87% is less than 30mph.
 
-<img src='reports/figures/blocks_splimit.png' width='500' align='center'>
+<img src='reports/figures/blocks_splimit.png' width='500' text-align='center'>
 
 A deeper look into the slope percentage and we discovered that the average slope of the top 10 blocks with the highest amount of collisions is about 1.4% while the bottom 10 blocks are higher at 3.8%.
 
