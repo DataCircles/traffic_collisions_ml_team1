@@ -108,11 +108,82 @@ Yearly Trends
     </tr>
 </table>
 
+### Arterial Class Seasonality
+
+Each road has a different arterial classification, which generally indicates if it's a major traffic throughway, or less so. 
+
+ARTCLASS - Arterial classification code:
+
+    5 - Interstate Freeway
+    4 - State Highway
+    3 - Collector Arterial
+    2 - Minor Arterial
+    1 - Principal Arterial
+    0 - Not Designated (not an arterial)
+
+Our studies have found that the vast majority of accidents happen on Arterial Class 1. When grouping for arterial classes we see:
+
+![](./reports/figures/art_all.png)
+
+Arterial class 1 has by far the most collisions per sheer count. It makes sense given the high traffic flow of these roads. But could there be other factors that contribute to this seasonal spike early in the year, during cold months? One would reasonably expect bad weather and road conditions to be at play. Let's find out:
+
+![](./reports/figures/weather3.png)
+
+So road conditions don't seem to be capturing the full volume of rise in collisions. Is it the weather conditions, generally?
+
+![](./reports/figures/weather1.png)
+
+![](./reports/figures/weather2.png)
+
+Contrary to my expectations, cold weather and adverse road conditions do not account for the seasonality.
+
+Let's zoom in on the years where we see the seasonality, 2013 to the present (2020).
+
+![](./reports/figures/art1_col_month.png)
+
+Capturing the seasonality with a generative model, using TensorFlow Probability's Gaussian Process Model:
+
+#### Detour into probabilistic ML to explore the Data
+
+![](./reports/figures/tfp1.png)
+
+This seasonality is not being explained by road conditions or weather. It could have to do with increased traffic flow during these times (more people on the road => more collisions). However, the traffic flow data coverage has only improved in recent years.
+
+There may be other features that indicate the seasonality, and this would be a great research area for further studies.
+
 ---
 
 ## Bayesian Approach
 
-Though there is a large degree of randomness underlying our data in this inherently random human phenomenon, we suspected that the general trends in collisions suggest one or more switchpoints in the rate of collisions. We turned to the PyMC3 library to to get a better understanding of the true probability of a collision.
+Though there is a large degree of randomness underlying our data in this inherently random human phenomenon, we suspected that the general trends in collisions suggest one or more switchpoints in the rate of collisions. We turned to the PyMC3 library to infer collision rates, and whether they're increasing or decreasing over time.
+
+Visualize the collisions on Rainier Ave S:
+
+![](./reports/figures/rainier1.png)
+
+Posterior for lambda_0:
+
+![](./reports/figures/rainier2.png)
+
+Posterior for lambda_1:
+
+![](./reports/figures/rainier3.png)
+
+Posterior for lambda_2:
+
+![](./reports/figures/rainier4.png)
+
+Posterior for tau_0:
+
+![](./reports/figures/rainier5.png)
+
+Posterior for tau_1:
+
+![](./reports/figures/rainier6.png)
+
+Visualized with tau points:
+
+![](./reports/figures/rainier7.png)
 
 ---
 ## Machine Learning Pt. I - Individual Collisions
@@ -183,7 +254,22 @@ For collisions occuring at intersections, the results intially appeared more fru
 It looks like Seattle's 2030 plan to install a lot of pedestrian-first traffic lights seems like an intelligent allocation of resources. Though the distribution of signal types outside of 'City' & 'None' is minimal across Seattle for a proper Machine Learning model, the higher rate at 'State' intersections would not take too many resources to resolve (there are only 31 reported intersections with this signal type). These all fall around highway ramps and we'd suggest making modifications to make traffic signals clearer there. For a more thorough data report on annual collision rates vs different intersection features, checkout this Tableau Dashboard Isaac put together here:
 https://public.tableau.com/profile/isaac.campbell.smith#!/vizhome/SeattleIntersections/TrafficCirclesAccidentRatesNon-Arterial
 
+---
+## Making Policy Recommendations
 
+### Severity Metric
+
+If we are to have cohesive findings, we need a cohesive measure of how dangerous a given area is, across the city, regardless of specificities.
+
+We made effort to control for traffic flow in our study to compare generally across features. While the traffic flow data has improved coverage in recent years, we cannot normalize across all the collision incidents with the limited data. However, we devised a different metric to compare generally across features, which could be more useful for comparing across types of road features and arterial classes.
+
+Our method for doing this comparison was to make a severity metric that takes into account number of collisions and gives a larger weight to fatalities, serious injuries and so on.
+
+Here's how we did that for the intersections data:
+
+![](./reports/figures/sev_metric.png)
+ 
+We see here we weighed fatalities 5x a normal collisions, serious injuries 4x, and so on. We divide by total number of collisions so each metric is on a scale from 0-1. This metric enabled us to label different street features and enable a spot check comparison. However it's not perfect. The majority of the numbers are mere fractions, making comparison and visualization difficult. It's not updatable for new data, as we normalize by the sheer count. The formula could be prone to error across different datasets, so the heuristic would need to be formalized.
 
 ---
 ## Final Thoughts
