@@ -54,7 +54,7 @@ Looking at a bar chart of the features present in both pedestrian/cyclist collis
 ## EDA of Additional Datasets
 
 Since the main collisions data only contains locations that had a collision, we decided to look for what is NOT there. We sought out other data that might be able to help us fill in the gap.
-Using a complete list of blocks, crosswalks and circles along with more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
+Using a complete list of blocks, crosswalks and circles along with more detailed features, we can merge it with the collisions data to have locations with and without collisions together. Note that these did not account for traffic flow.
 
 ### Blocks
 
@@ -96,9 +96,15 @@ About 77% of recorded traffic circles has had at least 1 collision over the year
 
 Yearly Trends
 
-     Blocks                |         Crosswalks        |     Circles
-:-------------------------:|:-------------------------:|:-------------------------:
-![](reports/figures/blocks_yearly.png)| ![](reports/figures/crosswalks_yearly.png) | ![](reports/figures/circles_yearly.png)
+<table>
+    <tr>
+        <td><img src='reports/figures/blocks_yearly.png'></td>
+        <td><img src='reports/figures/crosswalks_yearly.png'></td>
+    </tr>
+    <tr>
+        <td><img src='reports/figures/circles_yearly.png'></td>
+    </tr>
+</table>
 
 ---
 
@@ -133,12 +139,15 @@ Our next approach is to get feature importance from the individual datasets wher
 
 <table>
     <tr>
+        <td><img src='reports/figures/blocks_rf_featimportance.png'></td>
         <td><img src='reports/figures/crosswalks_rf_featimportance.png'></td>
     </tr>
     <tr>
         <td><img src='reports/figures/circles_rf_featimportance.png'></td>
     </tr>
 </table> 
+
+Slope percentage, arterial type and speed limit are all reasonable features to consider when it comes to accidents. Major roads have more traffic flow and thus would tend to have higher risk.
 
 Note that only about 8% of crosswalks at school zones had incidents while about 40% of crosswalks outside of school zones had incidents. Also note there are a lot more crosswalks outside of school zones (~70%).
 
