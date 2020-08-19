@@ -97,12 +97,12 @@ About 77% of recorded traffic circles has had at least 1 collision over the year
 Yearly Trends
 
 <table>
-    <tr width='800' height='800'>
-        <td><img src='reports/figures/blocks_yearly.png'></td>
-        <td><img src='reports/figures/crosswalks_yearly.png'></td>
+    <tr>
+        <td><img src='reports/figures/blocks_yearly.png' width='600'></td>
+        <td><img src='reports/figures/crosswalks_yearly.png' width='600'></td>
     </tr>
     <tr>
-        <td><img src='reports/figures/circles_yearly.png'></td>
+        <td><img src='reports/figures/circles_yearly.png' width='600'></td>
     </tr>
 </table>
 
