@@ -81,9 +81,29 @@ Most notable is the difference of important features in the collisions involving
 
 ## Machine Learning Pt. II - Aggregate Annualized Features
 
-Our second approach was to aggregate the Seattle Streets dataset and apply machine learning to predict annual number of accidents on features: transit class, slope percentage, speed limit, arterial class and average daily traffic counts. For intersections data, we only used signal type, arterial class and traffic circle. 
+Our second approach was to aggregate annual collision counts on the Seattle Streets and Intersections datasest and apply machine learning to predict annual number of accidents on meta features: transit class, slope percentage, speed limit, arterial class and average daily traffic counts for streets; signal type, arterial class and traffic circle (yes/no) for intersections. We used CatBoost for these models because it's Gradient Boosted Random Forest Algorithm is similar to LightGBM but it can handle strings categorically (LightGBM can only interpret integers). It's important to note that the Streets dataset contains multiple iterations of many streets (i.e. 1st Ave N between Broadway and Cherry, 1st Ave N between Pine and Yesler). We did not determine the time it would talk to meticulously map each collision to a particular street segment was a constructive use of time considering all other ML problems in the data, so the median values of the aforementioned features were taken for each named street. The intersections data does not have the same problem, but there are fewer features to study. Ultimately this effort was meant to inform further data analysis and supplement findings therein as the algorithm itself lends little to shape policy.<br>
 
-We used CatBoost for this approach because it's Gradient Boosted Random Forest Algorithm is similar to LightGBM but it can handle strings categorically (LightGBM can only interpret integers). As with the previous approach, the results leave a lot to be desired. For collisions not occuring at intersections, speed limit, traffic flow and slope percentage about equally weighted the models predictions. Introducing the number of traffic circles did not provide any more predictive power, most likely owing to it being a feature almost exclusively existing on non-arterial residential streets. 
+For collisions not occuring at intersections, speed limit, traffic flow and slope percentage about equally weighted the models predictions. 
+
+<img src="https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/Catboost_streets_feature_importances.png" width='400'>
+<br><br>
+Our interpretation of this modelling is that, at least on a 'block' level, the sheer volume of traffic will lead to certain numbers of collisions regardless of street features. Though speed limit and slope seem to significantly guide the decision tree splitting as well, it's unlikely to reduce speed limits on faster thoroughfares while mass modification of street slops is close to impossible. The only official recommendation we can make to the city here is make an effort to capture more informative mapping data in incident reports and nuance the Streets metadata further. For example, lane width is a feature included in their dataset, but there is no mention of lane counts. We suspect that space allotted to vehicles is correlated with lower collision rates, the data readily available does not provide this information.<br><br>
+
+For collisions occuring at intersections, the results intially appeared more fruitful. Signal type is clearly more important here than arterial class here, and even more important for collisions involving pedestrians and/or cyclists. Introducing whether or not an intersection had traffic circles did not provide any more predictive power, most likely owing to it being a feature almost exclusively existing on non-arterial residential streets.
+
+<table>
+    <tr>
+        <td><img src='https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/Intersections_onlypedcycles_features.png' width='450'></td>
+        <td><img src='https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/Intersections_allcollisions_features.png' width='545'></td>
+    </tr>
+</table>   
+<table><tr><td>
+<img src="https://raw.githubusercontent.com/DataCircles/traffic_collisions_ml_team1/master/reports/figures/Collisionrate_differentsignals.png" width='450'></td></tr></table>  
+<br><br>
+It looks like Seattle's 2030 plan to install a lot of pedestrian-first traffic lights seems like an intelligent allocation of resources. Though the distribution of signal types outside of 'City' & 'None' is minimal across Seattle for a proper Machine Learning model, the higher rate at 'State' intersections would not take too many resources to resolve (there are only 31 reported intersections with this signal type). These all fall around highway ramps and we'd suggest making modifications to make traffic signals clearer there. For a more thorough data report on annual collision rates vs different intersection features, checkout this Tableau Dashboard Isaac put together here:
+https://public.tableau.com/profile/isaac.campbell.smith#!/vizhome/SeattleIntersections/TrafficCirclesAccidentRatesNon-Arterial
+
+
 
 ---
 ## Final Thoughts
