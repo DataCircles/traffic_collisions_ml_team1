@@ -53,16 +53,15 @@ Looking at a bar chart of the features present in both pedestrian/cyclist collis
 
 ## EDA of Additional Datasets
 
-Since the main collisions data only contains locations that had a collision, we decided to look for what is NOT there. We sought out other data that might be able to help us fill in the gap. We obtained Seattle Streets data which are all the blocks, Intersections data, Traffic Circles data and Crosswalks data.
-
-Using a complete list of each those locations along more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
+Since the main collisions data only contains locations that had a collision, we decided to look for what is NOT there. We sought out other data that might be able to help us fill in the gap.
+Using a complete list of blocks and crosswalks along with more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
 
 ### Blocks
 
-Over the years, about 72.5% of the blocks recorded has had at least one collision.
+Over the years, about 72.5% of the blocks recorded has had at least one collision. Around 15% of those collisions involved pedestrians or cyclists.
 Looking the blocks data, there are 3 columns that seem like it could have significance: speed limit, slope percentage and artdescript (label of type of arterial road). We found that most blocks are categorized as some type of neighborhood street and thus a large number of them have pretty low speed limits- about 87% is less than 30mph.
 
-<img src='reports/figures/blocks_splimit.png' width='500' text-align='center'>
+<img src='reports/figures/blocks_splimit.png' width='500' align='center'>
 
 A deeper look into the slope percentage and we discovered that the average slope of the top 10 blocks with the highest amount of collisions is about 1.4% while the bottom 10 blocks are higher at 3.8%.
 
@@ -71,6 +70,12 @@ A deeper look into the slope percentage and we discovered that the average slope
 While the dataset mostly contains blocks that are not an arterial road, the blocks with the highest collisions are basically all classified as arterial types. If we take a look at the types of arterial description of collisions vs non-collisions, we can see that most major roads fell in the category of collisions:
 
 <img src='reports/figures/blocks_artdescript.png' width='700' align='center'>
+
+### Crosswalks
+
+Compared to blocks, only about 36% of crosswalks had an incident. About 95% collisions that happened at crosswalks involved a pedestrian and/or cyclist. Of those collisions, 2% resulted in a fatality.
+
+<img src='reports/figures/crosswalks_pedcyl.png' width='700' align='center'>
 
 
 ---
@@ -100,6 +105,15 @@ Most notable is the difference of important features in the collisions involving
         <td><img src='reports/figures/lightgbm_importance_ped_cyclist.png'></td>
 </table>   
 
+### Individual Features
+
+Our next approach is to get feature importance from the individual datasets where it simply contains information about the locations themselves and hopefully avoiding the data leakage issue we mentioned. We used Random Forest Classifier (collision or no collision) to obtain feature importances. The AUC score for the crosswalks prediction was only 0.53 but we mainly want to see the top features.
+
+<table>
+    <tr>
+        <td><img src='reports/figures/crosswalks_rf_featimportance.png'></td>
+    </tr>
+</table> 
 
 ---
 
