@@ -107,13 +107,18 @@ Most notable is the difference of important features in the collisions involving
 
 ### Individual Features
 
-Our next approach is to get feature importance from the individual datasets where it simply contains information about the locations themselves and hopefully avoiding the data leakage issue we mentioned. We used Random Forest Classifier (collision or no collision) to obtain feature importances. The AUC score for the crosswalks prediction was only 0.53 but we mainly want to see the top features.
+Our next approach is to get feature importance from the individual datasets where it simply contains information about the locations themselves and hopefully avoiding the data leakage issue we mentioned. We used Random Forest Classifier (collision or no collision) to obtain feature importances. The AUC score for the crosswalks and circles prediction was only 0.53 and 0.51 respectively but we mainly want to see the top features.
 
 <table>
     <tr>
         <td><img src='reports/figures/crosswalks_rf_featimportance.png'></td>
     </tr>
+    <tr>
+        <td><img src='reports/figures/circles_rf_featimportance.png'></td>
+    </tr>
 </table> 
+
+Note that only about 8% of crosswalks at school zones had incidents while about 40% of crosswalks outside of school zones had incidents. Also note there are a lot more crosswalks outside of school zones (~70%). 
 
 ---
 
