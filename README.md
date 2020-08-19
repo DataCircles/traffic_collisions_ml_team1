@@ -51,6 +51,30 @@ Looking at a bar chart of the features present in both pedestrian/cyclist collis
 
 ---
 
+## EDA of Additional Datasets
+
+Since the main collisions data only contains locations that had a collision, we decided to look for what is NOT there. We sought out other data that might be able to help us fill in the gap. We obtained Seattle Streets data which are all the blocks, Intersections data, Traffic Circles data and Crosswalks data.
+
+Using a complete list of each those locations along more detailed features, we can merge it with the collisions data to have locations with and without collisions together.
+
+### Blocks
+
+Over the years, about 72.5% of the blocks recorded has had at least one collision.
+Looking the blocks data, there are 3 columns that seem like it could have significance: speed limit, slope percentage and artdescript (label of type of arterial road). We found that most blocks are categorized as some type of neighborhood street and thus a large number of them have pretty low speed limits- about 87% is less than 30mph.
+
+<img src='reports/figures/blocks_splimit.png', width='400'>
+
+A deeper look into the slope percentage and we discovered that the average slope of the top 10 blocks with the highest amount of collisions is about 1.4% while the bottom 10 blocks are higher at 3.8%.
+
+<img src='reports/figures/blocks_slope.png', width='400'>
+
+While the dataset mostly contains blocks that are not an arterial road, the blocks with the highest collisions are basically all classified as arterial types. If we take a look at the types of arterial description of collisions vs non-collisions, we can see that most major roads fell in the category of collisions:
+
+<img src='reports/figures/blocks_artdescript.png', width='400'>
+
+
+---
+
 ## Bayesian Approach
 
 Though there is a large degree of randomness underlying our data in this inherently random human phenomenon, we suspected that the general trends in collisions suggest one or more switchpoints in the rate of collisions. We turned to the PyMC3 library to to get a better understanding of the true probability of a collision.
