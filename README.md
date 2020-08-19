@@ -140,6 +140,8 @@ Our next approach is to get feature importance from the individual datasets wher
 <table>
     <tr>
         <td><img src='reports/figures/blocks_rf_featimportance.png'></td>
+    </tr>
+    <tr>
         <td><img src='reports/figures/crosswalks_rf_featimportance.png'></td>
     </tr>
     <tr>
