@@ -62,7 +62,7 @@ Using a complete list of each those locations along more detailed features, we c
 Over the years, about 72.5% of the blocks recorded has had at least one collision.
 Looking the blocks data, there are 3 columns that seem like it could have significance: speed limit, slope percentage and artdescript (label of type of arterial road). We found that most blocks are categorized as some type of neighborhood street and thus a large number of them have pretty low speed limits- about 87% is less than 30mph.
 
-<img src='reports/figures/blocks_splimit.png' width='600'>
+<img src='reports/figures/blocks_splimit.png' width='500' align='center'>
 
 A deeper look into the slope percentage and we discovered that the average slope of the top 10 blocks with the highest amount of collisions is about 1.4% while the bottom 10 blocks are higher at 3.8%.
 
@@ -70,7 +70,7 @@ A deeper look into the slope percentage and we discovered that the average slope
 
 While the dataset mostly contains blocks that are not an arterial road, the blocks with the highest collisions are basically all classified as arterial types. If we take a look at the types of arterial description of collisions vs non-collisions, we can see that most major roads fell in the category of collisions:
 
-<img src='reports/figures/blocks_artdescript.png' width='800'>
+<img src='reports/figures/blocks_artdescript.png' width='700' align='center'>
 
 
 ---
